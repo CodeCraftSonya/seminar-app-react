@@ -14,14 +14,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  height: 100vh; /* Устанавливает высоту на весь экран */
+  margin: 0; /* Убирает отступы */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #343332;
 }
 
 .App-link {

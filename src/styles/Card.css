@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card_img {
+  display: inline-block;
+  max-width: 13%;
+  height: 13%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.card_content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.card_content_main {
+  display: inline-block;
+  width: 50%;
+}
+
+.card_heading {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.card_paragraph {
+  font-size: 16px;
+}
+
+.card_date {
+  font-size: 16px;
+}
