@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Seminars</h1>
+        <h1>Семинары</h1>
         <CardList
           cards={cards}
           onDelete={openDeleteModal}

@@ -6,6 +6,7 @@ function EditModal({ card, onClose, onSave, isOpen }) {
     title: '',
     description: '',
     photo: '',
+    time: '',
     date: '',
   });
 
@@ -14,7 +15,8 @@ function EditModal({ card, onClose, onSave, isOpen }) {
       setFormData({
         title: card.title,
         description: card.description,
-        photo: card.image,
+        photo: card.photo,
+        time: card.time,
         date: card.date,
       });
     }
@@ -22,10 +24,22 @@ function EditModal({ card, onClose, onSave, isOpen }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+
+    // Если поле даты, преобразуем формат из yyyy-mm-dd в dd.mm.yy
+    if (name === 'date') {
+      const [year, month, day] = value.split('-');
+      const formattedDate = `${day}.${month}.${year.slice(2)}`; // Преобразуем в dd.mm.yy
+      setFormData({
+        ...formData,
+        [name]: formattedDate,
+      });
+    } else {
+      // Если это не поле с датой, просто обновляем состояние как обычно
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -39,8 +53,8 @@ function EditModal({ card, onClose, onSave, isOpen }) {
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <h2>Редактировать карточку</h2>
-        <form onSubmit={handleSubmit}>
+        <h2 className="modal_heading">Редактировать карточку</h2>
+        <form onSubmit={handleSubmit} className="modal_form">
           <input
             type="text"
             name="title"
@@ -63,13 +77,21 @@ function EditModal({ card, onClose, onSave, isOpen }) {
             placeholder="Ссылка на изображение"
           />
           <input
+            type="time"
+            name="time"
+            value={formData.time}
+            onChange={handleChange}
+          />
+          <input
             type="date"
             name="date"
             value={formData.date}
             onChange={handleChange}
           />
           <button type="submit">Сохранить</button>
-          <button type="button">Отмена</button>
+          <button type="button" onClick={onClose}>
+            Отмена
+          </button>
         </form>
       </div>
     </div>

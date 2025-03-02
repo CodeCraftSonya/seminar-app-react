@@ -1,6 +1,10 @@
 .card {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 3fr 5fr 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
@@ -8,33 +12,73 @@
 
 .card_img {
   display: inline-block;
-  max-width: 13%;
-  height: 13%;
+  max-width: 100%;
+  align-content: center;
   object-fit: cover;
+  align-self: center;
   border-radius: 10px;
-  margin: 10px;
 }
 
 .card_content {
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: space-between;
-}
-
-.card_content_main {
-  display: inline-block;
-  width: 50%;
+  padding-block: 10%;
 }
 
 .card_heading {
-  font-size: 18px;
+  font-size: clamp(1rem, 0.8239rem + 0.7512vw, 1.5rem);
   text-transform: uppercase;
+  margin-block: 10px;
 }
 
 .card_paragraph {
-  font-size: 16px;
+  font-size: clamp(1rem, 0.9296rem + 0.3005vw, 1.2rem);
+  margin: 0;
 }
 
 .card_date {
-  font-size: 16px;
+  font-size: clamp(1rem, 0.9296rem + 0.3005vw, 1.2rem);
+  margin: 0;
+  margin-block: 10px;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Убирает лишние отступы */
+  background: none; /* Если не нужен фон */
+  border: none; /* Если без рамки */
+  cursor: pointer;
+  justify-self: center; /* Не даёт кнопке растягиваться */
+  align-self: center;
+}
+
+button svg {
+  stroke: #cc582b; /* Обычный цвет */
+  transition:
+    stroke 0.3s ease,
+    filter 0.3s ease;
+}
+
+button:hover svg {
+  stroke: #ff7b42; /* Новый цвет при наведении */
+  filter: drop-shadow(0 0 20px rgba(255, 123, 66, 1)); /* Оранжевое свечение */
+}
+
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .card_content {
+    padding-block: 0;
+  }
+
+  .card_img {
+    display: none; /* Скрываем изображение */
+  }
 }

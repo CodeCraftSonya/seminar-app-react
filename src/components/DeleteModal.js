@@ -7,8 +7,12 @@ function DeleteModal({ isOpen, onClose, onConfirm }) {
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <p>Вы уверены, что хотите удалить эту карточку?</p>
-        <button onClick={onConfirm}>Да, удалить</button>
+        <p className="modal_text">
+          Вы уверены, что хотите удалить эту карточку?
+        </p>
+        <button onClick={onConfirm} className="button_confirm">
+          Да, удалить
+        </button>
         <button onClick={onClose}>Отмена</button>
       </div>
     </div>

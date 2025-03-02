@@ -22,19 +22,7 @@
   margin-bottom: 20px;
 }
 
-.modal_form {
-  display: flex;
-  flex-direction: column;
-}
-
-.modal_form input {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.modal_form button {
+.modal button {
   margin-top: 10px;
   padding: 10px 20px;
   border: 1px solid #ff7b42;
@@ -42,7 +30,11 @@
   cursor: pointer;
 }
 
-.modal_form button:hover {
+.modal button:hover {
   background-color: #ff7b42; /* Новый цвет при наведении */
   filter: drop-shadow(0 0 20px rgba(255, 123, 66, 1)); /* Оранжевое свечение */
+}
+
+.button_confirm {
+  margin-right: 65px;
 }
