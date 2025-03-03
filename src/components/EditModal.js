@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import '../styles/EditModal.css';
 
 function EditModal({ card, onClose, onSave, isOpen }) {
+  // Состояние формы
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -9,7 +10,7 @@ function EditModal({ card, onClose, onSave, isOpen }) {
     time: '',
     date: '',
   });
-
+  // Когда модальное окно открывается и передаётся card, заполняем форму данными карточки
   useEffect(() => {
     if (card) {
       setFormData({
@@ -24,17 +25,15 @@ function EditModal({ card, onClose, onSave, isOpen }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    // Если поле даты, преобразуем формат из yyyy-mm-dd в dd.mm.yy
+    // Если изменяется дата, форматируем её в "дд.мм.гг"
     if (name === 'date') {
       const [year, month, day] = value.split('-');
-      const formattedDate = `${day}.${month}.${year.slice(2)}`; // Преобразуем в dd.mm.yy
+      const formattedDate = `${day}.${month}.${year.slice(2)}`;
       setFormData({
         ...formData,
         [name]: formattedDate,
       });
     } else {
-      // Если это не поле с датой, просто обновляем состояние как обычно
       setFormData({
         ...formData,
         [name]: value,
@@ -47,9 +46,8 @@ function EditModal({ card, onClose, onSave, isOpen }) {
     onSave({ ...card, ...formData });
     onClose();
   };
-
+  // Если модальное окно закрыто, ничего не рендерим
   if (!isOpen) return null;
-
   return (
     <div className="modal-overlay">
       <div className="modal">

@@ -43,6 +43,6 @@
 }
 
 .modal_form button:hover {
-  background-color: #ff7b42; /* Новый цвет при наведении */
-  filter: drop-shadow(0 0 20px rgba(255, 123, 66, 1)); /* Оранжевое свечение */
+  background-color: #ff7b42;
+  filter: drop-shadow(0 0 20px rgba(255, 123, 66, 1));
 }

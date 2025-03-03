@@ -43,7 +43,7 @@
   margin-block: 10px;
 }
 
-button {
+.card_button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -55,14 +55,14 @@ button {
   align-self: center;
 }
 
-button svg {
+.card_button svg {
   stroke: #cc582b;
   transition:
     stroke 0.3s ease,
     filter 0.3s ease;
 }
 
-button:hover svg {
+.card_button:hover svg {
   stroke: #ff7b42;
   filter: drop-shadow(0 0 20px rgba(255, 123, 66, 1));
 }

@@ -13,7 +13,7 @@ function Card({ card, onDelete, onEdit }) {
         </p>
       </div>
       <button
-        className="card_edit"
+        className="card_edit card_button"
         onClick={() => onEdit(card.id)}
         aria-label="Редактировать"
       >
@@ -34,7 +34,7 @@ function Card({ card, onDelete, onEdit }) {
       </button>
 
       <button
-        className="card_delete"
+        className="card_delete card_button"
         onClick={() => onDelete(card.id)}
         aria-label="Удалить"
       >

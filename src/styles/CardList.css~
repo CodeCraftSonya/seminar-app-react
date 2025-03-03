@@ -3,5 +3,11 @@
   flex-direction: column;
   gap: 25px;
   width: 50%;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 375px) {
+  .cardList {
+    width: 90%;
+  }
 }

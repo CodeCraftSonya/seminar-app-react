@@ -38,3 +38,9 @@
 .button_confirm {
   margin-right: 65px;
 }
+
+@media (max-width: 320px) {
+  .button_confirm {
+    margin-right: 0;
+  }
+}

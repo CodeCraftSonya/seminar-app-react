@@ -5,3 +5,9 @@
   width: 50%;
   margin-bottom: 50px;
 }
+
+@media (max-width: 425px) {
+  .cardList {
+    width: 90%;
+  }
+}
